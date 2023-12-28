@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ny-9n-y**bvo7%cvi8m%cia*so8n5@7ohs4-r7)_4@&c-!ytb!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -127,27 +127,30 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # DATABASE_URL = os.getenv('DATABASE_URL')
 # DATABASES = {
 #     'default': dj_database_url.config(default=DATABASE_URL)    
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': "moviesdb_392s",
-#         'USER': "moviesdb_392s_user",
-#         'PASSWORD': "qx9Wbd1SH9zUQJrIE8rBUgYanFe6CeS7",
-#         'HOST': "dpg-cm6gpgen7f5s73d9kti0-a.oregon-postgres.render.com",
-#         'PORT': "5432",
-#     }
-# }
+DATABASE_URL = os.getenv('DATABASE_URL')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "moviesdb_392s",
+        'USER': "moviesdb_392s_user",
+        'PASSWORD': "qx9Wbd1SH9zUQJrIE8rBUgYanFe6CeS7",
+        'HOST': "dpg-cm6gpgen7f5s73d9kti0-a.oregon-postgres.render.com",
+        'PORT': "5432",
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
